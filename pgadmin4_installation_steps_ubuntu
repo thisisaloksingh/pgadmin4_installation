@@ -1,0 +1,28 @@
+Install pgAdmin 4 on Ubuntu 16.04
+
+1. First need to install the basic packages :
+      -> Install dependencies, create a virtual environment, download, install & configure
+      
+                  apt-get install virtualenv python-pip libpq-dev python-dev
+                  Run the following command.
+                  virtualenv pgadmin4
+                  It will execute the 
+                  cd pgadmin4
+                  source bin/activate
+
+                  wget https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v1.4/pip/pgadmin4-1.4-py2.py3-none-any.whl
+
+                  pip install pgadmin4-1.4-py2.py3-none-any.whl 
+     
+    
+ 2.Configure :
+ 
+                  Write the SERVER_MODE = False in lib/python2.7/site-packages/pgadmin4/config_local.py to configure to run in single-user mode:
+                  echo "SERVER_MODE = False" >> lib/python2.7/site-packages/pgadmin4/config_local.py
+    
+3. Run :
+                  python lib/python2.7/site-packages/pgadmin4/pgAdmin4.py
+  
+  
+  
+  Access at http://localhost:5050
